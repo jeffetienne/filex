@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vue.Client_dans_la_file_view">
+
+    <LinearLayout
+        android:id="@+id/employe_gestion_file_llv_fileClients"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/employe_gestion_file_tv_numeroClient"
+            android:layout_width="125sp"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Numero" />
+
+        <ImageView
+            android:id="@+id/employe_gestion_file_iv_logoClient"
+            android:layout_width="125dp"
+            android:layout_height="0px"
+            android:layout_weight="3"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/employe_gestion_file_tv_tempsAttente"
+            android:layout_width="125sp"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Temps attente" />
+
+    </LinearLayout>
+    
+</LinearLayout>

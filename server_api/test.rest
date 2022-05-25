@@ -1,0 +1,215 @@
+
+###
+GET http://198.50.190.236:8080/users HTTP/1.1
+
+###
+GET http://198.50.190.236:8080/user/2 HTTP/1.1
+
+###
+POST http://198.50.190.236:8080/user HTTP/1.1
+
+//user
+###
+GET http://198.50.190.236:8080/user/144 HTTP/1.1
+
+###
+GET http://198.50.190.236:8080/users
+
+###
+POST http://198.50.190.236:8080/user/employee HTTP/1.1
+ 
+content-type: application/json
+
+ { "email": "rkadhem@isi-mtl.com",  "pwd" : "123" }
+###
+DELETE http://198.50.190.236:8080/user/4 HTTP/1.1
+//content-type: application/json
+
+ //{ "login": "rkadhem@isi-mtl.com",  "password" : "123" }
+POST http://198.50.190.236:8080/user HTTP/1.1
+content-type: application/json
+
+{ "first_name": "ornella" ,  "last_name" : "francisca" , "phone" : null, "date_of_birth" : null,"pwd" : null,"queue_id" : null ,"role_id" : "3","email" : "mail" }
+
+###
+GET http://198.50.190.236:8080/company/1
+###
+ 
+
+PUT http://198.50.190.236:8080/user HTTP/1.1
+content-type: application/json
+
+{"user_id" : "71", "first_name": "kadhem" ,  "last_name" : "riahi" , "phone" : "555-555-5555","pwd" : null,"email" : "rkadhem@gmail.com" }
+  
+###
+DELETE http://198.50.190.236:8080/user/71 HTTP/1.1
+
+//company
+
+###
+
+GET http://198.50.190.236:8080/companies
+###
+GET http://198.50.190.236:8080/company/7
+###
+POST http://198.50.190.236:8080/company
+content-type: application/json
+
+{ "company_name": "isi" ,   "admin_id" : "1", "field" : "informatique","email" : "isi@isi.com","phone" : "555-555-5555" }
+###
+
+PUT http://198.50.190.236:8080/company
+content-type: application/json
+
+{"company_id": "1", "company_name": "isi" ,   "admin_id" : "1", "field" : "informatique","email" : "isi@isi.com","phone" : "444-444-4444" }
+###
+
+DELETE http://198.50.190.236:8080/company/4
+
+###
+ 
+//queue
+GET http://198.50.190.236:8080/queues/1 HTTP/1.1
+###
+GET http://198.50.190.236:8080/queues HTTP/1.1
+###
+GET http://198.50.190.236:8080/queue/1 HTTP/1.1
+###
+
+POST  http://198.50.190.236:8080/queue HTTP/1.1
+content-type: application/json
+
+{ "civic_number": "2000", "apt": "1", "street": "null",
+    "postal_code": "H1K1C4", "city": "Montreal", "province": "Quebec", "country": "Canada",
+     "latitude": null, "longitude": null,"queue_name": "dollarama", "capacity": 15, "company_id": 1,
+  "email": "dollarama@mtl.com", "phone": "123-456-0789", "avg_waiting_time": null,
+   "avg_processing_time": null, "lundi_ouverture": "06:00", "lundi_fermeture": "21:00",
+      "mardi_ouverture": "08:00", "mardi_fermeture": "18:00", "mercredi_ouverture": "08:00",
+       "mercredi_fermeture": "18:00", "jeudi_ouverture": "08:00", "jeudi_fermeture": "18:00",
+        "vendredi_ouverture": "08:00", "vendredi_fermeture": "18:00", "samedi_ouverture": "08:00",
+        "samedi_fermeture": "16:00", "dimanche_ouverture": "12:00", "dimanche_fermeture": "15:00"} 
+###
+
+PUT  http://198.50.190.236:8080/queue HTTP/1.1
+content-type: application/json
+
+{ "queue_id":13 ,"civic_number": "2000", "apt": "1", "street": "null",
+    "postal_code": "H1K1C4", "city": "Montreal", "province": "Quebec", "country": "Canada",
+     "latitude": null, "longitude": null,"queue_name": "dollarama", "capacity": 15, "company_id": 1,
+  "email": "dollarama@mtl.com", "phone": "123-456-0789", "avg_waiting_time": 200,
+   "avg_processing_time": 200, "lundi_ouverture": "06:00", "lundi_fermeture": "21:00",
+      "mardi_ouverture": "08:00", "mardi_fermeture": "18:00", "mercredi_ouverture": "08:00",
+       "mercredi_fermeture": "18:00", "jeudi_ouverture": "08:00", "jeudi_fermeture": "18:00",
+        "vendredi_ouverture": "08:00", "vendredi_fermeture": "18:00", "samedi_ouverture": "08:00",
+        "samedi_fermeture": "12:00", "dimanche_ouverture": "12:00", "dimanche_fermeture": "15:00"} 
+###
+
+<<<<<<< HEAD
+DELETE http://198.50.190.236:8080/queue/13 HTTP/1.1
+=======
+DELETE http://198.50.190.236:8080/queue/8 HTTP/1.1
+>>>>>>> 5c36af693139da18f7cf3804ec9c1bc1e6f43e11
+
+###
+
+//user_queue 
+
+GET http://198.50.190.236:8080/user_queues/1
+<<<<<<< HEAD
+###
+
+GET http://198.50.190.236:8080/user_queues_avg/1
+=======
+>>>>>>> 5c36af693139da18f7cf3804ec9c1bc1e6f43e11
+###
+
+GET http://198.50.190.236:8080/user_queue/1
+
+###
+PUT  http://198.50.190.236:8080/user_queue HTTP/1.1
+content-type: application/json
+
+ { "user_queue_number": "22",  "queue_id" : "1" }
+### 
+
+<<<<<<< HEAD
+
+POST  http://198.50.190.236:8080/user/client HTTP/1.1
+=======
+POST  http://198.50.190.236:8080/createuser HTTP/1.1
+content-type: application/json
+
+ { "fname": null ,  "lname" : null , "phone" : null, "birthdate" : null,"pwd" : null,"registrationdate" : null,"subscription_id" : null,"branch_id" : null ,"role_id" : "3","email" : "hhh" }
+ 
+###
+POST  http://198.50.190.236:8080/testadd HTTP/1.1
+content-type: application/json
+
+ { "role_id" : 3,"email" : "hhh" }
+###
+POST  http://198.50.190.236:8080/getqueuelist HTTP/1.1
+content-type: application/json
+
+{ "branch_id" : 1 }
+
+###
+POST  http://http://198.50.190.236:8080/user HTTP/1.1
+content-type: application/json
+
+{ "first_name": null ,  "last_name" : null , "phone" : null, "birthdate" : null,"pwd" : null,"registrationdate" : null,"subscription_id" : null,"queue_id" : null ,"role_id" : "3","email" : "hhh" }
+  
+###
+POST  http://198.50.190.236:8080/usercheck HTTP/1.1
+>>>>>>> 9e577ae02f4481e5b98b72b397abc0e0b23cd27b
+content-type: application/json
+
+ { "email": "usr111@kk.kreep",  "branch_id" : "1" }
+ 
+###
+POST  http://198.50.190.236:8080/user/client HTTP/1.1
+content-type: application/json
+
+ { "email": "rkadhem@toto-tl.com",  "queue_id" : "1" }
+
+###
+POST  http://198.50.190.236:8080/user/employee HTTP/1.1
+content-type: application/json
+
+ { "email": "employee@tim.com",  "pwd" : "123" } 
+### 
+GET  http://198.50.190.236:8080/user_queues/1 HTTP/1.1
+content-type: application/json
+
+ { "client_id": "3",  "queue_id" : "1" }
+ 
+###
+
+DELETE http://198.50.190.236:8080/user_queue HTTP/1.1
+content-type: application/json
+
+ { "user_queue_id": "5" }
+=======
+
+POST  http://198.50.190.236:8080/user/client HTTP/1.1
+content-type: application/json
+
+ { "email": "jeff3@gmail.com",  "queue_id" : "1" }
+###    
+
+DELETE http://198.50.190.236:8080/user_queue HTTP/1.1
+content-type: application/json
+
+ { "user_queue_id": "4" } 
+
+###
+
+GET  http://198.50.190.236:8080/next_user_queue/1 HTTP/1.1
+###
+PUT  http://198.50.190.236:8080/user_queue HTTP/1.1
+content-type: application/json
+
+ {   "queue_id" : "1" }
+###
+
+GET  http://198.50.190.236:8080/today_user_queues/1 HTTP/1.1
+###

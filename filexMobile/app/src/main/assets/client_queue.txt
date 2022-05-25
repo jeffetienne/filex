@@ -1,0 +1,44 @@
+
+[
+
+{
+"id": 2,
+"first_name": "Untel",
+"last_name": "Pierre",
+"phone": "5145742285",
+"date_of_birth": "1996-03-08",
+"pwd": "abc123...",
+"registration_date": "2022-04-04",
+"queue_id": "1",
+"role_id": "2",
+"email": "untel@filex.com",
+"subscription_id": 2
+},
+{
+"id": 3,
+"first_name": "Jonel",
+"last_name": "Pierre",
+"phone": "5145742285",
+"date_of_birth": "1996-03-08",
+"pwd": "abc123...",
+"registration_date": "2022-04-04",
+"queue_id": "null",
+"role_id": "2",
+"email": "jonel@filex.com",
+"subscription_id": 2
+},
+{
+"id": 4,
+"first_name": "John",
+"last_name": "Wick",
+"phone": "5145742285",
+"date_of_birth": "1996-03-08",
+"pwd": "abc123...",
+"registration_date": "2022-04-04",
+"queue_id": 5,
+"role_id": "3",
+"email": "john@filex.com",
+"subscription_id": 2
+}
+]
+

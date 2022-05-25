@@ -1,0 +1,206 @@
+	<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>QUEUE</h1>
+	<h2>GET</h2>
+	<h3>get by id</h3>
+    <h3>Parametres</h3>
+	<li>queue_id</li>
+  
+
+    <h3>Response/ Method: GET</h3>
+    <p>198.50.190.236:8080/queue</p>
+    <p>Code 200: Tout va bien</p>
+
+    <pre>
+        {
+         state: 200
+         queue:{
+            queue_id,
+            queue_name,
+            registration-date,
+            address_id,
+			capacity,
+            company_id,
+            email,
+            phone,
+			avg_waiting_time,
+			avg_processing_time
+			civic_number
+			apt
+			street
+			city
+			province
+			country
+			latitude 
+			longitude 
+			lundi_ouverture
+			lundi_fermeture
+			mardi_ouverture
+			mardi_fermeture
+			mercredi_ouverture
+			mercredi_fermeture
+			jeudi_ouverture
+			jeudi_fermeture
+			vendredi_ouverture
+			vendredi_fermeture
+			samedi_ouverture
+			samedi_fermeture
+			dimanche_ouverture
+			dimanche_fermeture
+        }
+        }
+    </pre>
+
+<h2>POST</h2>
+	<h3>add queue</h3>
+    <h3>Parametres</h3>
+	<li>queue_name</li>
+    <li>capacity</li>
+    <li>company_id</li>
+	<li>email</li>
+    <li>phone</li>
+	<li>avg_waiting_time</li>
+	<li>avg_processing_time</li>
+	<li>civic_number</li>
+	<li>apt</li>
+	<li>street</li>
+	<li>city</li>
+	<li>province</li>
+	<li>country</li>
+	<li>latitude (optionnel)</li>
+	<li>longitude (optionnel)</li>
+	<li>lundi_ouverture</li>
+	<li>lundi_fermeture</li>
+	<li>mardi_ouverture</li>
+	<li>mardi_fermeture</li>
+	<li>mercredi_ouverture</li>
+	<li>mercredi_fermeture</li>
+	<li>jeudi_ouverture</li>
+	<li>jeudi_fermeture</li>
+	<li>vendredi_ouverture</li>
+	<li>vendredi_fermeture</li>
+	<li>samedi_ouverture</li>
+	<li>samedi_fermeture</li>
+	<li>dimanche_ouverture</li>
+	<li>dimanche_fermeture</li>
+
+
+    <h3>Response/ Method: POST</h3>
+    <p>198.50.190.236:8080/queue</p>
+    <p>Code 200: Tout va bien</p>
+
+    <pre>
+        {
+         state: 200
+         queue:{
+            queue_id,
+            queue_name,
+            registration-date,
+            address_id,
+			capacity,
+            company_id,
+            email,
+            phone,	
+			avg_waiting_time,
+			avg_processing_time
+        }
+        }
+	</pre>
+   
+	
+	<h2>PUT</h2>
+	<h3>update queue</h3>
+    <h3>Parametres</h3>
+	<li>queue_id</li>
+	<li>queue_name</li>
+    <li>capacity</li>
+    <li>company_id</li>
+	<li>email</li>
+    <li>phone</li>
+	<li>avg_waiting_time</li>
+	<li>avg_processing_time</li>
+	<li>civic_number</li>
+	<li>apt</li>
+	<li>street</li>
+	<li>city</li>
+	<li>province</li>
+	<li>country</li>
+	<li>latitude (optionnel)</li>
+	<li>longitude (optionnel)</li>
+	<li>lundi_ouverture</li>
+	<li>lundi_fermeture</li>
+	<li>mardi_ouverture</li>
+	<li>mardi_fermeture</li>
+	<li>mercredi_ouverture</li>
+	<li>mercredi_fermeture</li>
+	<li>jeudi_ouverture</li>
+	<li>jeudi_fermeture</li>
+	<li>vendredi_ouverture</li>
+	<li>vendredi_fermeture</li>
+	<li>samedi_ouverture</li>
+	<li>samedi_fermeture</li>
+	<li>dimanche_ouverture</li>
+	<li>dimanche_fermeture</li>
+
+
+    <h3>Response/ Method: PUT</h3>
+    <p>198.50.190.236:8080/queue</p>
+    <p>Code 200: Tout va bien</p>
+
+    <pre>
+        {
+         state: 200
+         queue:{
+            queue_id,
+            queue_name,
+            registration-date,
+            address_id,
+			capacity,
+            company_id,
+            email,
+            phone,
+			avg_waiting_time,
+			avg_processing_time
+        }
+        }
+	</pre>
+	
+	<h2>DELETE</h2>
+	<h3>delete queue</h3>
+    <h3>Parametres</h3>
+	<li>queue_id</li>
+
+
+    <h3>Response/ Method: DELETE</h3>
+    <p>198.50.190.236:8080/queue</p>
+    <p>Code 200: Tout va bien</p>
+
+    <pre>
+        {
+         state: 200
+         queue:{
+            queue_id,
+            queue_name,
+            registration-date,
+            address_id,
+            company_id,
+            email,
+            phone,
+			avg_waiting_time,
+			avg_processing_time
+        }
+        }
+	</pre>
+	
+</body>
+
+</html>

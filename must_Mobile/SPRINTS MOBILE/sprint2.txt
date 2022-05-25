@@ -1,0 +1,18 @@
+
+Fin sprint 1 :
+	- Employe - Validation de connexion
+	- Utilisateur - Validation de connexion
+
+
+
+Sprint 2 :
+	- creation fichier json pour test
+	- Employe - Bouton "Suivant"
+	- Employe et Utilisateur - Fonction "Temps moyen" (calculé dynamiquement, depuis le temps initial saisi par le patron, et recalculé après le passage de chaque client)
+	- Employe et Utilisateur - Fonction "En cours"
+	- Employe et Utilisateur - Récupération / utilisation de GUID (ou tocken), pour gestion des bulles (ordre d'affichage) des bulles clients dans la file
+	- Employe et Utilisateur - Fonction simple-clic sur une bulle client : affichage informations clients (numéro / heure d'arrivée dans la file...)
+	- Employe - Fonction clic-long sur une bulle client : affichage alerte-dialog, proposant la suppression du client cliqué
+	- Utilisateur - Fonction notification d'information ("Vous êtes le prochain" / "Vous passerez dans environ 5 minutes"...)
+	- Employe - Creation et gestion de boutons "Démarrer file" et "Arrêter file" (pour employe du matin / du soir)
+	- Gestion de temps d'actualisation de file (envoyer une requête toutes les ... secondes), permettant de mettre a jour la file (nombre de personnes)

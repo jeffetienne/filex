@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Client_Accueil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Gestion de la file"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <!--  FIN TITRE  -->
+
+    <!--  DEBUT BULLES CLIENTS  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/client_gestion_file_llh_fileClients"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/liste_clients"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" />
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--  FIN BULLES CLIENTS  -->
+
+    <!--  DEBUT NUMERO EN COURS / TEMPS MOYEN / TEMPS MOYEN CALCULE  -->
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="0px"
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_weight="15"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/client_position"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Vous êtes le client n°  :" />
+
+            <TextView
+                android:id="@+id/client_number"
+                android:layout_width="100sp"
+                android:layout_height="40sp"
+                android:gravity="center"
+                android:hint="0" />
+        </LinearLayout>
+
+        <!--  DEBUT NOMBRE DE CLIENTS DANS LA FILE  -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/client_gestion_file_tv_nombreClients"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Nombre de clients dans la file  :" />
+
+            <TextView
+                android:id="@+id/client_gestion_file_tv_nombreClientsInfos"
+                android:layout_width="100sp"
+                android:layout_height="40sp"
+                android:gravity="center"
+                android:hint="0" />
+
+        </LinearLayout>
+
+        <!--  FIN NOMBRE DE CLIENTS DANS LA FILE  -->
+
+        <!--  DEBUT NUMERO EN COURS  -->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/client_gestion_file_tv_numEnCours"-->
+<!--                android:layout_width="150sp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="right"-->
+<!--                android:text="Numéro en cours  :" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/client_gestion_file_tv_numEnCoursInfos"-->
+<!--                android:layout_width="100sp"-->
+        <!--                android:layout_height="40sp"-->
+        <!--                android:gravity="center"-->
+        <!--                android:hint="0" />-->
+
+        <!--        </LinearLayout>-->
+
+        <!--  FIN NUMERO EN COURS  -->
+
+        <!--  DEBUT TEMPS MOYEN  -->
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:gravity="center"-->
+        <!--            android:orientation="horizontal">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/client_gestion_file_tv_tempsMoyen"-->
+        <!--                android:layout_width="150sp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:gravity="right"-->
+        <!--                android:text="Temps Moyen  :" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/client_gestion_file_tv_tempsMoyenInfos"-->
+        <!--                android:layout_width="100sp"-->
+        <!--                android:layout_height="40sp"-->
+        <!--                android:gravity="center"-->
+        <!--                android:hint="00:00" />-->
+
+        <!--        </LinearLayout>-->
+
+        <!--  FIN TEMPS MOYEN  -->
+
+    </LinearLayout>
+
+    <!--  FIN NUMERO EN COURS / TEMPS MOYEN / TEMPS MOYEN CALCULE  -->
+
+    <!--  DEBUT BOUTON SUIVANT  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="9"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/client_btn_retirer"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="60dp"
+            android:enabled="false"
+            android:text="Se retirer de la file" />
+
+    </LinearLayout>
+
+    <!--  FIN BOUTON SUIVANT  -->
+
+</LinearLayout>

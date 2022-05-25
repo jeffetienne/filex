@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Client_Connexion">
+
+    <!--  DEBUT TITRE  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="500dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_margin="25dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/connexion" />
+
+    </LinearLayout>
+
+    <!--  FIN TITRE  -->
+
+    <!--  DEBUT FORMULAIRE  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/client_et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Votre courriel"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/client_et_id_queue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="1"
+            android:hint="Entrez l'ID de la file" />
+
+    </LinearLayout>
+
+    <!--  FIN FORMULAIRE  -->
+
+    <!--  DEBUT BOUTON VALIDATION  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/client_btn_valider"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="60dp"
+            android:enabled="false"
+            android:background="@drawable/rounded_corner"
+            android:text="Insertion dans la file" />
+
+    </LinearLayout>
+
+    <!--  FIN BOUTON VALIDATION  -->
+
+</LinearLayout>

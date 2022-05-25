@@ -1,0 +1,12 @@
+
+Lien utile: 
+
+https://devtut.github.io/android/httpurlconnection.html#sending-an-http-post-request-with-parameters
+
+https://www.youtube.com/watch?v=RGQ3_UpDzO0
+
+https://jsonplaceholder.typicode.com/ For api tests
+
+https://www.youtube.com/watch?v=5uxTs-MZMsk
+
+https://youtu.be/5DEHmN4PmA0 QR Code generator android project

@@ -1,0 +1,415 @@
+'use strict'
+
+const { Client } = require('pg')
+
+function establishConnexion () {
+    const client = new Client({
+        host: 'localhost',
+        port: 5432,
+        database: 'filexBd',
+        user: 'postgres',
+        password: 'postgres'
+    })
+    client.connect()
+    return client
+}
+
+function getLastQueueNumber(resultCallback){
+    const connection = establishConnexion()
+    connection.query("select max(user_queue_number) as queuemax from user_queue where cast(insert_date as date)=cast(now() as date) and queue_id=1;", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        console.log('dans la query function queue getter')
+        connection.end()
+    })   
+}
+
+function loginuser (login, password,resultCallback) {
+    const connection = establishConnexion()
+    connection.query("SELECT user_id , first_name , last_name , phone , date_of_birth , registration_date , queue_id , role_id , email FROM table_user WHERE  email = '" + login + "' AND pwd = '"+ password +"'", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        console.log('dans la query function login')
+        connection.end()
+    })
+}
+
+
+function getAllUsers (resultCallback) {
+    const connection = establishConnexion()
+    connection.query('SELECT * FROM table_user', (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        console.log('dans la query function')
+        connection.end()
+    })
+}
+
+function getuserbyemail (email, resultCallback) {
+    const connection = establishConnexion()
+    connection.query("SELECT * FROM table_user where email = '"+ email +"'", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)         
+        console.log('dans la query function get by email')
+        connection.end()
+    })
+}
+
+function getUserQueueByUserId(client_id,queue_id,resultCallback){
+    const connection = establishConnexion()
+    connection.query("SELECT * FROM user_queue where queue_id = "+ queue_id +" and client_id = "+client_id+" and cast(insert_date as date)=cast(now() as date) ", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)         
+        connection.end()
+    })
+}
+
+/*function getQueuByDate (employeeid, resultCallback) {
+    const connection = establishConnexion()
+    let date = new Date();
+    connection.query("select * from queue q , table_user tu where tu.user_id = '"+employeeid+"' and q.insert_date = '"+date+"' and q.arrived = 0 and tu.branch_id = q.branch_id", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        console.log('dans la query function')
+        connection.end()
+    })
+}*/
+
+function setQueuState(){
+    const connection = establishConnexion()
+    connection.query("select count(*) from queue q , table_user tu where tu.user_id = '"+employeeid+"' and q.insert_date = '"+date+"' and q.arrived = 0 and tu.branch_id = q.branch_id", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        console.log('dans la query function')
+        connection.end()
+    })
+}
+function getUserById(user_id,resultCallback){
+    try {
+        const connection = establishConnexion()
+        connection.query("SELECT * FROM table_user WHERE user_id = "+ user_id + "", (error, result) => {
+            if (error) {
+                throw error
+            }
+            resultCallback(result.rows)
+            connection.end()
+        })
+    } catch (error) {   
+    }
+}
+function getUsersByRole(role_id,resultCallback){
+    try {
+        const connection = establishConnexion()
+        connection.query("SELECT * FROM table_user WHERE role_id = "+ role_id + "", (error, result) => {
+            if (error) {
+                throw error
+            }
+            resultCallback(result.rows)
+            connection.end()
+        })
+    } catch (error) {   
+    }
+}
+function getuserbytel (tel, resultCallback) {
+    try {
+        const connection = establishConnexion()
+        connection.query("SELECT * FROM table_user WHERE phone = ' "+ tel + "'", (error, result) => {
+            if (error) {
+                throw error
+            }
+            resultCallback(result.rows)
+            console.log('dans la query function')
+            connection.end()
+        })
+    } catch (error) {   
+    }
+}
+
+function createUser (first_name,last_name,phone,pwd,subscription_id,queue_id,role_id,email,resultCallback) {
+    const connection = establishConnexion()
+    connection.query("INSERT INTO table_user (first_name, last_name, phone, pwd, registration_date, subscription_id, queue_id, role_id, email) VALUES('"+ first_name +"','"+ last_name +"','"+ phone +"','"+ pwd +"',NOW(),"+subscription_id+","+queue_id+","+role_id+",'"+email+"') RETURNING *;"
+    , (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        console.log("dans le fonction creer user")
+        connection.end()
+    })
+}
+
+
+function addSimpleUser (fname,lname,email,resultCallback) {
+    const connection = establishConnexion()
+    connection.query("INSERT INTO public.table_user (role_id,first_name,last_name, email) VALUES(3,'"+fname+"','"+lname+"','"+email+"') RETURNING *;"
+    , (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        connection.end()
+    })
+}
+//user_id , first_name , last_name , phone , date_of_birth , pwd , registration_date , subscription_id ,branch_id , role_id,email
+/*function createAdmin(fname,lnamem,numeroTel,email,password,subid){
+    const connection = establishConnexion()
+    connection.query("INSERT INTO user (playlist_id,title,uri,master_id) VALUES ('" + login + "','" + password +"')", (error, result) => {
+        if (error) {
+            throw error
+        }
+        connection.end()
+    })
+}
+
+function createClient(fname,lname,numeroTel,dateofbirth,password,email){
+    const connection = establishConnexion()
+    connection.query("INSERT INTO user (playlist_id,title,uri,master_id) VALUES ('" + login + "','" + password +"')", (error, result) => {
+        if (error) {
+            throw error
+        }
+        connection.end()
+    })
+}*/
+
+function deleteuser (id,resultCallback) {
+    const connection = establishConnexion()
+    connection.query('DELETE FROM table_user WHERE  user_id= ' + id + ' RETURNING *', (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        connection.end()
+    })
+}
+
+function updateUser (user_id, first_name,last_name,phone,pwd,subscription_id,email,resultCallback) {
+    const connection = establishConnexion()
+    connection.query("UPDATE table_user SET  first_name = '"+first_name+"', last_name = '"+last_name+"' , phone = '"+phone+"' ,pwd = '"+pwd+"',subscription_id = "+subscription_id+", email = '"+ email +"' WHERE user_id = "+ user_id +" RETURNING *", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        console.log('dans la query function')
+        connection.end() 
+    })
+}
+
+function getCompanyById(company_id,resultCallback){
+    const connection = establishConnexion()
+    connection.query("SELECT * FROM company WHERE company_id = "+company_id+"",(error, result) => {
+        if (error) {
+            throw error
+        }
+    resultCallback(result.rows)
+    connection.end() 
+    })
+}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+function getCompanies(resultCallback){
+    const connection = establishConnexion()
+    connection.query("SELECT * FROM company ",(error, result) => {
+=======
+=======
+function getAllCompanies(resultCallback){
+    const connection = establishConnexion()
+    connection.query("SELECT * FROM company ",(error, result) => {
+        if (error) {
+            throw error
+        }
+    resultCallback(result.rows)
+    connection.end() 
+    })
+}
+
+>>>>>>> 49257d46ecf0e6903f683d889e899284d69de0e8
+function getCompaniesByPatron(admin_id,resultCallback){
+    const connection = establishConnexion()
+    connection.query("SELECT * FROM company WHERE admin_id = "+admin_id+";",(error, result) => {
+>>>>>>> c3b2c4c7c2d504bebc58a02e1266cbf30c9b3279
+        if (error) {
+            throw error
+        }
+    resultCallback(result.rows)
+    connection.end() 
+    })
+}
+
+function creatCompany(company_name,admin_id,field,phone,email,resultCallback){
+    const connection = establishConnexion()
+    connection.query("insert into company (company_name,registration_date,admin_id,field,email,phone) VALUES('"+company_name+"',NOW(),"+admin_id+",'"+field+"','"+email+"','"+phone+"') RETURNING *",(error, result) => {
+        if (error) {
+            throw error
+        }
+    resultCallback(result.rows)
+    connection.end() 
+    })
+}
+
+function updateCompany(company_id,company_name,admin_id,field,phone,email,resultCallback){
+    const connection = establishConnexion()
+    connection.query("UPDATE company SET company_name = '"+company_name+"',admin_id = "+admin_id+" ,field = '"+field+"',email = '"+email+"',phone = '"+phone+"' where company_id = "+company_id+" RETURNING *",(error, result) => {
+        if (error) {
+            throw error
+        }
+    resultCallback(result.rows)
+    connection.end() 
+    })
+}
+
+function deleteCompany(company_id,resultCallback){
+    const connection = establishConnexion()
+    connection.query("DELETE FROM company WHERE  company_id= " + company_id + " RETURNING *",(error, result) => {
+        if (error) {
+            throw error
+        }
+    resultCallback(result.rows)
+    connection.end() 
+    })
+}
+
+function getNextClientQueue(queue_id,resultCallback){
+    const connection = establishConnexion()
+    connection.query("select * from user_queue where cast(insert_date as date)=cast(now() as date) and user_queue_number = (select min(user_queue_number) from user_queue where cast(insert_date as date)=cast(now() as date) and queue_id= 1 and arrived = 0)", (error, result) => {
+        if (error) {
+            throw error
+        }
+        console.log("dans le get next client")
+        resultCallback(result.rows)
+        connection.end()
+    })
+}
+
+function insertIntoQueu (client_id,queue_id,resultCallback) {
+    const connection = establishConnexion()
+    connection.query("INSERT INTO public.user_queue (client_id, queue_id, insert_date, check_in_date, type_id, user_queue_number, arrived) VALUES("+client_id+", "+queue_id+", now(),null, 1, (select count(user_queue_number) as queuemax from user_queue where cast(insert_date as date)=cast(now() as date) and queue_id="+queue_id+")+1, 0) RETURNING * ", (error, result) => {
+        if (error) {
+            throw error
+        }
+        console.log("dans le inserinto")
+        resultCallback(result.rows)
+        connection.end()
+    })
+}
+
+function getListQueue (branch_id,resultCallback) {
+    const connection = establishConnexion()
+    connection.query("select * from user_queue  where user_queue_id = "+ branch_id +"", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        connection.end()
+    })
+}
+
+function deleteUserQueue (user_queue_id,resultCallback) {
+    const connection = establishConnexion()
+    connection.query("delete from user_queue where user_queue_id ="+user_queue_id+" RETURNING * ;", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        connection.end()
+    })
+}
+
+function getUsersQueueByqueueId(queue_id,resultCallback){
+    const connection = establishConnexion()
+    connection.query("select * from user_queue where queue_id ="+queue_id+" and cast(insert_date as date)=cast(now() as date);", (error, result) => {
+        if (error) {
+            throw error
+        }
+        resultCallback(result.rows)
+        connection.end()
+    })
+}
+function testquery(){
+    let connection = establishConnexion()
+    //test select
+    connection.query("SELECT * from table_user", (error, result) => {
+        if (error) {
+            throw error
+        }
+        //console.log(result)
+        connection.end()
+    })
+
+    //test insert
+     connection = establishConnexion()
+    connection.query("INSERT INTO role (role_name) VALUES ('admin')", (error, result) => {
+        if (error) {
+            throw error
+        }
+        console.log(result)
+        connection.end()
+    })
+
+    //test delete
+    connection = establishConnexion()
+    connection.query("DELETE FROM role WHERE role_id = '1'",(error, result) => {
+        if (error) {
+            throw error
+        }
+        //console.log(result)
+        connection.end()
+    })
+}
+
+//testquery()
+/*
+
+})*/
+
+module.exports = {
+    getNextClientQueue,
+    deleteUserQueue,
+    deleteCompany,
+    updateCompany,
+    creatCompany,
+    getCompanyById,
+    getCompaniesByPatron,
+    getAllCompanies,
+    getUserById,
+    getListQueue,
+    getLastQueueNumber,
+    addSimpleUser,
+    insertIntoQueu,
+    getAllUsers,
+    loginuser,
+    updateUser,
+    deleteuser,
+    createUser,
+    getuserbytel,
+    getuserbyemail,
+<<<<<<< HEAD
+<<<<<<< HEAD
+    getCompanies
+=======
+    getUsersByRole
+>>>>>>> c3b2c4c7c2d504bebc58a02e1266cbf30c9b3279
+=======
+    getUsersByRole,
+<<<<<<< HEAD
+    getUserQueueByUserId,
+    getUsersQueueByqueueId
+=======
+    getUserQueueByUserId
+>>>>>>> 49257d46ecf0e6903f683d889e899284d69de0e8
+>>>>>>> 757af52647acdebb419ee1e87e7ba9e919019fa5
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF"
+    tools:context=".Employe_connexion">
+
+    <!--  DEBUT TITRE  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="500dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_margin="25dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/connexion" />
+
+
+
+    </LinearLayout>
+
+    <!--  FIN TITRE  -->
+
+    <!--  DEBUT FORMULAIRE  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/employe_connexion_et_userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Votre courriel"
+            android:text="employee@tim.com"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/employe_connexion_et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:text="123"
+            android:hint="Votre mot de passe" />
+
+    </LinearLayout>
+
+    <!--  FIN FORMULAIRE  -->
+
+    <!--  DEBUT BOUTON VALIDATION  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/employe_connexion_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="60dp"
+            android:background="@drawable/rounded_corner"
+            android:enabled="false"
+            android:text="Connexion" />
+
+    </LinearLayout>
+
+    <!--  FIN BOUTON VALIDATION  -->
+
+</LinearLayout>

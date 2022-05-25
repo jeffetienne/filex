@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+      <h1>USER_QUEUE</h1>
+	<h2>GET</h2>
+	<h3>get by id</h3>
+    <h3>Parametres</h3>
+	<li>user_queue_id</li>
+  
+
+    <h3>Response/ Method: GET</h3>
+    <p>198.50.190.236:8080/user_queue</p>
+    <p>Code 200: Tout va bien</p>
+
+    <pre>
+        {
+         state: 200
+         user_queues:[{
+                user_queue_id : 1,
+                client_id : 1,
+                queue_id : 1,
+                insert_date : "23-07-2022",
+                check_in_date : "",
+                type_id : 1,
+                user_queue_number : 15,
+                arrived : 0
+                },
+				{
+                user_queue_id : 1,
+                client_id : 1,
+                queue_id : 1,
+                insert_date : "23-07-2022",
+                check_in_date : "",
+                type_id : 1,
+                user_queue_number : 15,
+                arrived : 0
+                }]
+
+        }
+    </pre>
+	
+<h2>POST</h2>
+	<h3>s'inserer dans la file</h3>
+    <h3>Parametres</h3>
+	<li>user_id (id du client)</li>
+	<li>queue_id</li>
+
+
+    <h3>Response/ Method: POST</h3>
+    <p>198.50.190.236:8080/user_queue</p>
+    <p>Code 200: Tout va bien</p>
+
+    <pre>
+        {
+         state: 200
+         user_queues:{
+                user_queue_id,
+                client_id,
+                queue_id,
+                insert_date,
+                check_in_date,
+                type_id,
+                user_queue_number,
+                arrived
+                }
+
+        }
+    </pre>
+	
+	
+	
+	<h2>PUT</h2>
+	<h3>lorsque l'employee clique sur suivant</h3>
+    <h3>Parametres</h3>
+	<li>user_queue_number</li>
+	<li>queue_id</li>
+
+
+    <h3>Response/ Method: PUT</h3>
+    <p>198.50.190.236:8080/user_queue</p>
+    <p>Code 200: Tout va bien</p>
+
+    <pre>
+        {
+         state: 200
+         user_queue:{
+                user_queue_id,
+                client_id,
+                queue_id,
+                insert_date,
+                check_in_date,
+                type_id,
+                user_queue_number,
+                arrived
+                }
+
+        }
+    </pre>
+	
+	<h2>DELETE</h2>
+	<h3>supprimer un user</h3>
+    <h3>Parametres</h3>
+	<li>user_queue_id</li>
+
+
+    <h3>Response/ Method: DELETE</h3>
+    <p>198.50.190.236:8080/user_queue</p>
+    <p>Code 200: Tout va bien</p>
+
+    <pre>
+        {
+         state: 200
+         user_queues:{
+                user_queue_id,
+                client_id,
+                queue_id,
+                insert_date,
+                check_in_date,
+                type_id,
+                user_queue_number,
+                arrived
+                }
+
+        }
+    </pre>
+
+</body>
+
+</html>

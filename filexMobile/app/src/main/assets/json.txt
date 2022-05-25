@@ -1,0 +1,99 @@
+
+{
+	"Clients":{"users":[{
+		"user_id":"1",
+		"first_name":"ornella",
+		"last_name":"akom",
+		"phone":"514-222-333",
+		"date_of_birth":"14-05-2001",
+		"pwd":"abc123...",
+		"registration_date":"",
+		"subscription_id":"",
+		"branch_id":"",
+		"role_id":"",
+		"email":"ornella@yahoo.fr"
+	},
+	{
+		"user_id":"2",
+		"first_name":"adrien",
+		"last_name":"noto",
+		"phone":"514-444-333",
+		"date_of_birth":"30-01-1999",
+		"pwd":"hjk456...",
+		"registration_date":"",
+		"subscription_id":"",
+		"branch_id":"",
+		"role_id":"",
+		"email":""
+	}
+	
+		]},
+		
+	"Employes":{"users":[{
+		"user_id":"5",
+		"first_name":"yacine",
+		"last_name":"toure",
+		"phone":"438-222-333",
+		"date_of_birth":"17-04-2000",
+		"pwd":"kqj555...",
+		"registration_date":"",
+		"subscription_id":"",
+		"branch_id":"",
+		"role_id":"",
+		"email":"yacine@yahoo.fr"
+	},
+	{
+		"user_id":"8",
+		"first_name":"blondel",
+		"last_name":"duperval",
+		"phone":"514-111-222",
+		"date_of_birth":"05-11-1995",
+		"pwd":"123456...",
+		"registration_date":"",
+		"subscription_id":"",
+		"branch_id":"",
+		"role_id":"",
+		"email":""
+	}
+	
+		]},
+		
+	"CompanyInfos":{"company":[{
+		"name":"iga",
+		"registration_date":"10-01-2020",
+		"admin_id":"14",
+		"field":"groceries",
+		"email":"iga@videotron.fr",
+		"phone":"817-222-777"
+	},
+	
+	{"name":"metro",
+		"registration_date":"09-01-2021",
+		"admin_id":"12",
+		"field":"groceries",
+		"email":"metro@metro.ca",
+		"phone":"819-444-555"
+	}
+	
+		]},
+		
+	"File":{"queue":[{
+		"client_id":"1",
+		"branch_id":"20",
+		"insert_date":"11-11-2000",
+		"check_in_date":"12-04-2022",
+		"type_id":"",
+		"number":""
+	},
+	
+	{
+		"client_id":"2",
+		"branch_id":"15",
+		"insert_date":"11-11-2000",
+		"check_in_date":"12-04-2022",
+		"type_id":"",
+		"number":""
+	}
+	
+		]}	
+}

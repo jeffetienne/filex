@@ -1,0 +1,9 @@
+
+partie mobile ;
+    *user :
+        - connexion employé / client        
+    *queue:
+        - print queue for employee
+        - print queue for client
+        - next client 
+        - remove client

@@ -1,0 +1,17 @@
+
+
+[
+	{
+		"email":"kirikou@iga.ca",
+		"pwd":"abc123..."
+	},
+	{
+		"email":"jeanne@iga.ca",
+		"pwd":"123456789"
+	},
+	{
+		"email":"adrien@videotron.ca",
+		"pwd":"adrnot159..."
+	}
+
+]

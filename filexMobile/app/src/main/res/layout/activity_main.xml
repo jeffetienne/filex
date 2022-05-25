@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+   <!--   DEBUT TITRE-->
+
+   <LinearLayout
+       android:id="@+id/ll_titre"
+       android:layout_width="match_parent"
+       android:layout_height="0px"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:orientation="vertical">
+
+      <ImageView
+          android:layout_width="500dp"
+          android:layout_height="300dp"
+          android:layout_gravity="center"
+          android:layout_margin="25dp"
+          android:layout_marginTop="60dp"
+          android:src="@drawable/welcome" />
+
+
+   </LinearLayout>
+
+   <!--   FIN TITRE-->
+
+   <!--   DEBUT CHOIX : VOUS ETES-->
+
+   <LinearLayout
+       android:id="@+id/ll_vous_etes"
+       android:layout_width="match_parent"
+       android:layout_height="0px"
+       android:gravity="center"
+       android:layout_weight="1.5
+"
+       android:orientation="vertical">
+
+      <ImageView
+          android:layout_width="500dp"
+          android:layout_height="200dp"
+          android:layout_gravity="center"
+          android:layout_margin="25dp"
+          android:src="@drawable/filelogo" />
+   </LinearLayout>
+
+   <!--   FIN CHOIX : VOUS ETES-->
+
+   <!--   DEBUT CHOIX : VOUS ETES-->
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:layout_marginTop="45sp"
+       android:text="Vous êtes  :"
+       android:textSize="20sp" />
+
+   <LinearLayout
+       android:id="@+id/ll_btn_choix"
+       android:layout_width="match_parent"
+       android:layout_height="0px"
+       android:layout_weight="1.5"
+       android:gravity="center_horizontal|center_vertical"
+       android:orientation="vertical">
+
+      <Button
+          android:id="@+id/btn_employer"
+          android:layout_width="180dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:backgroundTint="#FFC107"
+          android:text="Employé" />
+
+      <Button
+          android:id="@+id/btn_client"
+          android:layout_width="180dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:backgroundTint="#FFC107"
+          android:text="Client" />
+
+   </LinearLayout>
+
+   <!--   FIN CHOIX : VOUS ETES-->
+
+</LinearLayout>
